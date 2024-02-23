@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital@0;1&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+/*To style the Google Font*/
+.mulish
+{
+    font-family: "Mulish", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+/*style the contents in body*/
+body{
+     background-color: rgb(160,160,161);
+     align-items: center;
+     display: flex;
+     flex-direction: column;
+     font-family: "Mulish",sans-serif;
+     justify-content: center;
+     height: 100vh;
+     overflow: hidden;
+     margin: 0;
+}
+
+:root
+{
+    --line-border-fill: rgb(34, 34, 244); /*The colour used for filling the bar*/
+    --line-border-empty: rgb(175, 238, 238); /*The colour used while bar the empty*/
+}
+
+.container{
+    text-align: center;
+}
+
+.progress-container{
+display: flex;
+justify-content: space-between;
+position: relative;
+margin-bottom: 30px;
+max-width: 100%;
+width: 350px;
+
+}
+
+.progress-container ::before{
+     
+    content: '';
+    background-color:var(--line-border-empty);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 4%;
+    width: 100%;
+    transform: translateY(-50%);
+    z-index: -1;
+    transition:0.4s ease ;
+
+
+}
+
+.progress{
+    background-color: var(--line-border-fill);
+    position:absolute;
+    top: 50%;
+    left: 0;
+    height: 4px;
+    width: 0%;
+    transform: translateY(-50%);
+    z-index: -1;
+    transition: 0.4s ease;
+
+}
+
+.circle{
+    background-color: white;
+    color: rgb(30,25, 25);
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--line-border-empty);
+    transition: 0.4s ease;
+
+}
+
+.circle.active{
+    border-color: var(--line-border-fill);
+}
+
+.btn{
+    background-color: var(--line-border-fill);
+    color: white;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 8px 30px;
+    margin: 5px;
+    font-size: 14px;
+}
+
+.btn:active{
+    transform: scale(1.1);
+}
+
+.btn:disabled{
+    background-color: var(--line-border-empty);
+    cursor: not-allowed;
+    color: black;
+}
